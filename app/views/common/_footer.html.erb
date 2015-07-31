@@ -1,14 +1,21 @@
 <footer class="navbar-fixed-bottom">
-  <div id="brand-pic-container" class="pull-left">
+  <div id="brand-pic-container" class="footer-dropup-trigger pull-left" data-target="#brand-details">
     <%= image_tag "codeastra", id: "brand-pic", class: "img-circle" %>
   </div>
+  <div id="brand-details" class="hidden">
+    <h3>Business Model Canvas</h3>
+    <p>Built with <%= fa_icon "heart" %> by <%= link_to "Code Astra", "http://www.codeastra.com" %></p>
+    <p>
+      Version, Track, Share and Maintain your Business Model using our slick app. This will be free for ever. Please feel free to share with your friends!
+    </p>
+  </div>
 
-  <div id="profile-pic-container" class="pull-right">
+  <div id="profile-pic-container" class="footer-dropup-trigger pull-right" data-target="#user_details">
     <%= image_tag current_user.image, id: 'profile-pic', class: "img-circle" %>
   </div>
   <div id="user_details" class="hidden">
-    Loggedin as <br>
-    <%= current_user.email %> <br>
+    <p>Logged in as</p>
+    <h4><%= current_user.name %></h4>
     <%= link_to fa_icon('sign-out', text: 'Logout'), destroy_user_session_path, method: :delete %>
   </div>
 </footer>
